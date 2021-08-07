@@ -5,7 +5,7 @@ const {
 	createTask,
 	getTaskById,
 	updateTaskById,
-	deleteTaskByID
+	deleteTaskById
 } = require('../controllers/tasksController');
 
 // GET All the tasks

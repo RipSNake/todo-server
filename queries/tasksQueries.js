@@ -18,9 +18,9 @@ const taskById = async (id) => {
 		error => error);
 }
 
-const updateTask = async (task) => {
+const updateTask = async (taskId, task) => {
 	return await pool.then(
-		conn => conn.query('UPDATE tasks SET description=?, done=?, folderId=? WHERE id = ?',[task.description, task.done, task.folderId, task.id]),
+		conn => conn.query('UPDATE tasks SET description=?, done=?, folderId=? WHERE id = ?',[task.description, task.done, task.folderId, taskId]),
 		error => error);
 }
 
