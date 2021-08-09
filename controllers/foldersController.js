@@ -31,17 +31,18 @@ const getFolders = async (req, res, next) => {
 
 const createFolder = async (req, res, next) => {
 	try {
-		const created = await createNewFolder(req.body);
-		if(created) {
+		const folder = await createNewFolder(req.body);
+		if(folder) {
 			res.json({
 				status: 200,
-				message: 'Folder Created'
+				message: 'Folder Created',
+				data: folder
 			})
 		} else {
 			res.status(400).json({
 				status: 400,
 				message: 'Error creating folder',
-				data: created
+				data: folder
 			})
 		}
 	} catch(error) {

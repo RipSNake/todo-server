@@ -37,7 +37,8 @@ const createTask = async (req, res, next) => {
 		if(task) {
 			res.json({
 				status: 200,
-				message: 'Task created'
+				message: 'Task created',
+				data: task
 			})
 		} else {
 			res.status(400).json({
